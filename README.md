@@ -1,73 +1,35 @@
-# React + TypeScript + Vite
+# dc-creations-sample-1
+Sample ecommerce application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Step 1**: Download/Clone the project from Github Repository **dc-creations-sample-1**
+**Step 2**: Navigate into the project folder. Open terminal in it and run **npm install** command to download packages
+**Step 3:** Run the application with **npm run dev** command
+**Step 4:** To connect with backend, go to src/api/product.api.ts. In Line no. 21, add the corresponsing backend url with end point. A sample request is given in Line no. 23.
 
-Currently, two official plugins are available:
+**Note:**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Sample request from frontend - http://localhost:5173/api/products?query=kurta&page=1&limit=12
+Sample expected response from backend -
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
+{
+    "status": "success",
+    "data": {
+        "results": [
+            {
+                "id": "1001",
+                "name": "Floral Printed Cotton Kurta",
+                "price": 2499,
+                "currency": "INR",
+                "desktopImageUrl": "https://images.meesho.com/images/products/387726308/iubze_512.webp?width=512",
+                "mobileImageUrl": "https://images.meesho.com/images/products/387726308/iubze_512.webp?width=512",
+                "ctaLink": "/products/1001",
+                "altText": "Floral Printed Cotton Kurta",
+                "sortOrder": 13
+            },
+            ....
+        ]
     },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    "total": 17,
+    "page": 2,
+    "limit": 12
+}
