@@ -1,8 +1,8 @@
-import type { Product } from "../types/products"
+// import type { Product } from "../types/products"
 
 type ProductResponse = {
     status: string
-    data: Product[]
+    data: any
     total: number
     page: number
     limit: number

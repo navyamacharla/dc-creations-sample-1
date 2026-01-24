@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ShoppingBag, CircleUserRound, Menu, X, ChevronDown } from "lucide-react";
+import { ShoppingBag, CircleUserRound, Menu, X, ChevronDown, Heart } from "lucide-react";
 import { menuCategories } from "../config/menu";
 import NavbarSearch from "../components/search/NavbarSearch";
 import { Link } from "react-router-dom";
@@ -69,6 +69,7 @@ export default function NavBar() {
 
                 <div className="flex items-center gap-3 md:hidden">
                     <CircleUserRound className="w-5 h-5 cursor-pointer" />
+                    <Heart className="w-5 h-5 cursor-pointer" />
                     <ShoppingBag className="w-5 h-5 cursor-pointer" />
                 </div>
 
@@ -78,6 +79,7 @@ export default function NavBar() {
                     <div className="flex items-center gap-4">
                         <NavbarSearch />
                     </div>
+                    <Heart className="w-6 h-6 cursor-pointer" />
                     <ShoppingBag className="h-6 w-6 cursor-pointer" />
                     <CircleUserRound className="h-6 w-6 cursor-pointer" />
                 </div>

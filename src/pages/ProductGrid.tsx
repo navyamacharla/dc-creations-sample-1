@@ -19,7 +19,7 @@ export default function ProductGrid({ products, query }: {products: any, query: 
 
       <section className="w-full">
         <div className=" grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
-          {products?.results && products.results?.map((product: Product) => (
+          {products && products.map((product: Product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
