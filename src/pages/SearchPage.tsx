@@ -26,7 +26,7 @@ export default function SearchPage() {
 
     fetchProducts(query)
       .then((res: any) => {
-        setTotal(res.total)
+        // setTotal(res.total)
         setProducts(res)
         // setProducts((prev) =>
         //   isMobile && page > 1 ? [...prev, ...res] : res

@@ -9,3 +9,15 @@ export interface Product {
   altText: string;
   sortOrder: number;
 }
+
+export interface Product_Sample {
+  basePrice: number;
+  categoryName: string;
+  designName: string;
+  fabricName: string;
+  productName: string;
+  styleName: string;
+  weaveName: string;
+  variantsJson: any;
+  id: number;
+}

@@ -10,10 +10,10 @@ export const productHandlers = [
         const limit = Number(url.searchParams.get("limit")) || 12
 
         const filtered = searchResults.filter((p) =>
-            p.name.toLowerCase().includes(query)
+            p.categoryName.toLowerCase().includes(query)
         )
 
-        const start = (page - 1) * limit
+        // const start = (page - 1) * limit
         // const paginated = filtered.slice(start, start + limit)
 
         // return HttpResponse.json({
@@ -24,6 +24,6 @@ export const productHandlers = [
         //     limit,
         // })
 
-        return HttpResponse.json([])
+        return HttpResponse.json(filtered)
     }),
 ]
