@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useSearchParams } from "react-router-dom"
 import { fetchProducts } from "../api/product.api"
 import Pagination from "../components/common/Pagination"
-import type { Product } from "../types/products"
+// import type { Product } from "../types/products"
 import ProductGrid from "./ProductGrid"
 import { useIsMobile } from "../hooks/useIsMobile"
 
@@ -10,7 +10,7 @@ const LIMIT = 12
 
 export default function SearchPage() {
   const [params, setParams] = useSearchParams()
-  const [products, setProducts] = useState<Product[]>([])
+  const [products, setProducts] = useState([])
   const [total, setTotal] = useState(0)
   const [loading, setLoading] = useState(false)
   const isMobile = useIsMobile()
@@ -24,12 +24,13 @@ export default function SearchPage() {
   useEffect(() => {
     setLoading(true)
 
-    fetchProducts({ query, page, limit: LIMIT })
-      .then((res) => {
+    fetchProducts(query)
+      .then((res: any) => {
         setTotal(res.total)
-        setProducts((prev) =>
-          isMobile && page > 1 ? [...prev, ...res.data.results] : res.data.results
-        )
+        setProducts(res)
+        // setProducts((prev) =>
+        //   isMobile && page > 1 ? [...prev, ...res] : res
+        // )
       })
       .finally(() => setLoading(false))
   }, [query, page])

@@ -14,14 +14,16 @@ export const productHandlers = [
         )
 
         const start = (page - 1) * limit
-        const paginated = filtered.slice(start, start + limit)
+        // const paginated = filtered.slice(start, start + limit)
 
-        return HttpResponse.json({
-            status: 'success',
-            data: { results: paginated },
-            total: filtered.length,
-            page,
-            limit,
-        })
+        // return HttpResponse.json({
+        //     status: 'success',
+        //     data: { results: paginated },
+        //     total: filtered.length,
+        //     page,
+        //     limit,
+        // })
+
+        return HttpResponse.json([])
     }),
 ]
