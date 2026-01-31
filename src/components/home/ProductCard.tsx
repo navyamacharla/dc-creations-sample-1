@@ -23,7 +23,7 @@ export default function ProductCard({ product, isNew }: { product: Product, isNe
 
         <img
           src={hovered ? product.desktopImageUrl : product.mobileImageUrl}
-          alt={product.name}
+          alt={product.productName}
           className="w-full h-[280px] md:h-[280px] lg:h-[360px] object-cover transition-all duration-300 cursor-pointer
                   group-hover:scale-105" draggable={false}
         />
@@ -32,11 +32,11 @@ export default function ProductCard({ product, isNew }: { product: Product, isNe
       {/* Info */}
       <div className="mt-3 space-y-1">
         <h3 className="text-gray-900 truncate font-regular text-sm">
-          {product.name}
+          {product.productName}
         </h3>
 
         <p className="text-md font-semibold">
-          ₹{product.price.toLocaleString()}
+          ₹{product.basePrice.toLocaleString()}
         </p>
 
         <div className="flex items-center gap-1 text-xs text-gray-600">

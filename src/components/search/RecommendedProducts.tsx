@@ -19,16 +19,16 @@ export default function RecommendedProducts() {
                     >
                         <img
                             src={product.desktopImageUrl}
-                            alt={product.name}
+                            alt={product.productName}
                             className="w-12 h-14 object-cover rounded"
                         />
 
                         <div>
                             <p className="text-sm font-medium truncate">
-                                {product.name}
+                                {product.productName}
                             </p>
                             <p className="text-xs text-rosebrown-600 font-semibold">
-                                ₹{product.price}
+                                ₹{product.basePrice}
                             </p>
                         </div>
                     </div>
